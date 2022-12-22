@@ -17,6 +17,10 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Title">
         </div>
         <div class="form-group">
+            <label for="date"><b>Data do evento</b></label>
+            <input type="date" class="form-control" id="date" name="date">
+        </div>
+        <div class="form-group">
             <label for="title"><b>Info</b></label>
             <input type="text" class="form-control" id="description" name="description" placeholder="Description">
         </div>
@@ -32,6 +36,17 @@
                 <option value="0">No</option>
                 <option value="1">Yes</option>
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for=""><b>Add Infrastructure Items</b></label>
+                <div class="from-group">
+                    <input type="checkbox" name="items[]" id="items" value="Cadeiras"> Cadeiras<br>
+                    <input type="checkbox" name="items[]" id="items" value="Palco"> Palco<br>
+                    <input type="checkbox" name="items[]" id="items" value="Cerveja"> Cerveja<br>
+                    <input type="checkbox" name="items[]" id="items" value="Open Food"> Open Food<br>
+                    <input type="checkbox" name="items[]" id="items" value="Brindes"> Brindes<br>
+                </div>
         </div>
 
         <input type="submit" value="Submit" class="btn btn-primary">

@@ -25,17 +25,34 @@
                             
                         </a>
                     </li>
+                    @auth
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Log in
+                        <a href="/dashboard" class="nav-link">My Events
+                            
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <a href="/logout" class="nav-link" onclick="event.preventDefault();this.closest('form').submit();">Sair </a>
+                        </form>
+                        
+                    </li>
+                    @endauth
+
+                    @guest
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">Log in
                             
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Register
+                        <a href="/register" class="nav-link">Register
                             
                         </a>
                     </li>
+                    @endguest
                 </ul>
            </div>
         </nav>

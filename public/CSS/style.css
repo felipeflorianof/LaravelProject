@@ -146,3 +146,31 @@ footer {
 footer p {
   margin-bottom: 0;
 }
+
+.not-available{
+  border-radius: 2px;
+  margin: auto;
+  background-color: #edd4d4;
+  color: 155424;
+  border:  1px solid #e6c3c3;
+  width: 400px;
+  margin-bottom: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.box-search{
+  display: flex;
+  justify-content: center;
+  gap: 0.5%;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 15px;
+}
+ .box-search-title{
+  text-align: center;
+}
+ .box-div{
+  display: block;
+}
