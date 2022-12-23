@@ -4,6 +4,8 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
+
 <div class="col-md-10 offset-md-1 dashboard-title-container">
     <h1>Meus Eventos</h1>
 </div>
@@ -24,15 +26,22 @@
     <tr>
       <td script="row">{{ $loop->index + 1 }}</td>
       <td><a href="/events/{{ $event->id }}">{{ $event->title }}</a></td>
-      <td><a href="#">Editar</a></td>
-      <td><a href="#">Deletar</a></td>
+      <td>uhjdfh</td>
+    <td>
+        <a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+
+        <form action="/events/{{ $event->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon> Deletar</button>
+      </form>
+    </td>
     </tr>
     @endforeach
   </tbody>
 </table>
     @else
-    <p class="not-available">Não há eventos disponíveis</p>
-
+    <p>Você ainda não tem eventos, <a href="/event/create">Criar Evento</a></p>
     @endif
 </div>
 @endsection
