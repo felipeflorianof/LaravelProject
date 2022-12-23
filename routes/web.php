@@ -15,20 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [eventController::class, 'index'])->name('index');
-
 Route::get('/event/create', [eventController::class, 'create'])->name('create')->middleware('auth');
-
 Route::post('/events', [eventController::class, 'store'])->name('store');
-
 Route::get('/events/{id}', [eventController::class, 'show'])->name('show');
 
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/dashboard', [eventController::class, 'dashboard'])->middleware('auth');
